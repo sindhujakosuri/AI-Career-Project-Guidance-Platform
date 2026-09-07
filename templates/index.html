@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerAI — Smart Career Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+<header class="navbar">
+    <a class="logo" href="#"><span class="logo-mark">✦</span> CareerAI</a>
+    <div class="nav-pill"><span class="live-dot"></span> AI Career Assistant</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <div class="hero-copy">
+            <div class="eyebrow"><span>✦</span> INTELLIGENT CAREER ANALYSIS</div>
+            <h1>Build the career<br><span>you’re meant for.</span></h1>
+            <p class="subtitle">Upload your resume and let CareerAI analyze your skills, estimate ATS compatibility, and discover career paths that fit your profile.</p>
+            <div class="trust-row"><span>✓ Resume analysis</span><span>✓ Skill detection</span><span>✓ Career matching</span></div>
+        </div>
+
+        <div class="upload-panel">
+            <div class="panel-top"><div class="panel-icon">↑</div><div><strong>Analyze your resume</strong><small>PDF or TXT · Max 5 MB</small></div></div>
+            <form id="uploadForm">
+                <label class="upload-box" id="dropZone">
+                    <input type="file" id="resume" name="resume" accept=".pdf,.txt" required>
+                    <div class="upload-cloud">↥</div>
+                    <strong id="fileName">Drop your resume here</strong>
+                    <span>or <u>browse files</u></span>
+                </label>
+                <button type="submit" id="analyzeBtn"><span>Analyze Resume</span><b>→</b></button>
+            </form>
+            <div class="status" id="status"><span>●</span> Your resume stays private during this analysis.</div>
+        </div>
+    </section>
+
+    <section id="results" class="results hidden">
+        <div class="section-heading"><div><p class="eyebrow">YOUR AI REPORT</p><h2>Resume insights</h2></div><div class="report-badge">● Analysis complete</div></div>
+        <div class="summary-grid">
+            <div class="card score-card">
+                <div class="card-label">ATS COMPATIBILITY <span>?</span></div>
+                <div class="score-wrap"><div class="score-ring"><div><strong id="atsScore">--</strong><small>/100</small></div></div><div><h3 id="atsLabel">Resume Score</h3><p>Estimated ATS compatibility</p></div></div>
+            </div>
+            <div class="card career-card">
+                <div class="card-label">BEST CAREER MATCH</div>
+                <div class="career-main"><div class="career-icon">✦</div><div><h3 id="topCareer">--</h3><p>AI-recommended career direction</p></div></div>
+                <div class="confidence"><span>Confidence</span><strong id="confidence">--</strong></div><div class="progress"><span id="confidenceBar"></span></div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <div class="card-head"><div><div class="card-label">SKILLS DETECTED</div><h3>Your technical profile</h3></div><span class="count" id="skillCount">0</span></div>
+                <div id="skills" class="chips"></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><div><div class="card-label">RESUME HEALTH</div><h3>Quick overview</h3></div></div>
+                <div class="stats"><div><strong id="wordCount">0</strong><span>Words</span></div><div><strong id="sectionCount">0</strong><span>Sections</span></div><div><strong id="skillCount2">0</strong><span>Skills</span></div></div>
+            </div>
+        </div>
+
+        <div class="card career-matches"><div class="card-head"><div><div class="card-label">CAREER DISCOVERY</div><h3>Top career matches</h3></div><span>Based on detected skills</span></div><div id="careers"></div></div>
+        <div class="card suggestions-card"><div class="card-head"><div><div class="card-label">ACTION PLAN</div><h3>Improve your ATS score</h3></div></div><div id="suggestions" class="suggestion-grid"></div></div>
+    </section>
+</main>
+<footer>CareerAI <span>•</span> AI Career &amp; Project Guidance Platform</footer>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
